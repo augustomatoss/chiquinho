@@ -29,7 +29,7 @@
               size="0.075 0.065 0.455"
               color="White"/>
 
-    <robot_joint parent="link_1" child="link_2" type="prismatic"
+    <!-- <robot_joint parent="link_1" child="link_2" type="prismatic"
              origin_xyz="0 -0.2275 0" origin_rpy="0 0 0"
              axis="0 0 1"
              limit_l="-0.10" limit_u="0.15" limit_v="0.1" limit_e="1000.0"/>    
@@ -55,6 +55,13 @@
       iyy="0.00008333"   iyz="0" 
       izz="0.00008333"
       size="0.1 0.1 0.1"
-      color="Red"/>
+      color="Red"/> -->
     
+    <!-- END Robot description -->
+
+    <!-- BNG Gazebo -->
+      <gazebo>
+            <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so"/>
+      </gazebo>
+      
 </robot>

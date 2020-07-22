@@ -21,6 +21,16 @@
             <parent link="${parent}" />
             <child link="${child}" />
         </joint>
+        <transmission name="trans_${parent}__${child}">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="${parent}__${child}">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="motor_${parent}__${child}">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
     </xacro:macro>
 
     <xacro:macro name="box_link" params="name origin_xyz origin_rpy mass ixx ixy ixz iyy iyz izz size color">
