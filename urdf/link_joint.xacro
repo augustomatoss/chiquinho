@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <material name="Red">
+        <color rgba="0.8 0.2 0.2 1.0"/>
+    </material>
+
+    <material name="White">
+        <color rgba="0.8 0.8 0.8 1.0"/>
+    </material>
+
+    <material name="Black">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+    </material>
+
+    <xacro:macro name="robot_joint" params="parent child type origin_xyz origin_rpy axis limit_e limit_u limit_l limit_v">
+        <joint name="${parent}__${child}" type="${type}">
+            <axis xyz="${axis}" />
+            <limit effort="${limit_e}" lower="${limit_l}" upper="${limit_u}" velocity="${limit_v}" />
+            <origin rpy="${origin_rpy}" xyz="${origin_xyz}" />
+            <parent link="${parent}" />
+            <child link="${child}" />
+        </joint>
+    </xacro:macro>
+
+    <xacro:macro name="box_link" params="name origin_xyz origin_rpy mass ixx ixy ixz iyy iyz izz size color">
+        <link name="${name}">
+            <inertial>
+                <origin xyz="${origin_xyz}" rpy="${origin_rpy}"/>
+                <mass value="${mass}"/>
+                <inertia ixx="${ixx}" ixy="${ixy}" ixz="${ixz}" 
+                         iyy="${iyy}" iyz="${iyz}"
+                         izz="${izz}"/>
+            </inertial>
+            <visual>
+                <origin xyz="${origin_xyz}" rpy="${origin_rpy}"/>
+                <geometry>
+                    <box size="${size}"/>
+                </geometry>
+                <material name="${color}"/>
+            </visual>
+            <collision>
+                <origin xyz="${origin_xyz}" rpy="${origin_rpy}"/>
+                <geometry>
+                    <box size="${size}"/>
+                </geometry>
+            </collision>
+        </link>
+    </xacro:macro>
+    
+</robot>
