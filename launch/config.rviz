@@ -55,12 +55,12 @@ Visualization Manager:
       Reference Frame: <Fixed Frame>
       Value: true
     - Class: rviz/Axes
-      Enabled: true
+      Enabled: false
       Length: 1
       Name: Axes
       Radius: 0.019999999552965164
       Reference Frame: <Fixed Frame>
-      Value: true
+      Value: false
     - Alpha: 0.800000011920929
       Class: rviz/RobotModel
       Collision Enabled: false
@@ -76,12 +76,22 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        end_effector_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         link_1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
         link_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        link_3:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -120,7 +130,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.4508087635040283
+      Distance: 0.8718969821929932
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -135,10 +145,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.16539843380451202
+      Pitch: 0.46039873361587524
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 1.4853993654251099
+      Yaw: 3.1404004096984863
     Saved: ~
 Window Geometry:
   Displays:
